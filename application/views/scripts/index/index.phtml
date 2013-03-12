@@ -4,7 +4,9 @@
     <div id="products">
         <? foreach($this->products->toArray() as $product): ?>
             <div class="product">
-                <img src="<? echo $product['productImageLarge']?>" alt="Product" width="100" height="100"/> 
+                <a href="/selected/sku/<? echo $product['sku']; ?>">
+                    <img src="<? echo $product['productImageLarge']?>" alt="Product" width="100" height="100"/> 
+                </a>
             </div>
         <? endforeach; ?>
     </div>

@@ -80,9 +80,10 @@ body {
 
 #content {
     width: 900px;
+    margin: 0 auto;
 }
 
-#content header {
+body header {
     height: 200px;
     text-align: center;
     margin: 10px 0 30px;
