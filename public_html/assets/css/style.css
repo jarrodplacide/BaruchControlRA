@@ -112,10 +112,28 @@ body header {
     display: inline-block;
     margin: 0 15px 10px 0;
     border: 3px solid white;
+    position: relative;
+}
+
+#content #products .product .close {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
 }
 
 #content #products .product:hover {
     border: 3px solid blue;
+}
+
+#content #products .product:hover .close {
+    z-index: 1;
+}
+
+#content #products .product:hover .close:hover {
+    color: red;
 }
 
 #content #products .product:active {
