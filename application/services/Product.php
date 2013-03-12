@@ -52,4 +52,42 @@ class Service_Product extends Service_Base_Foundation {
         }
         return $results;
     }
+    
+    /**
+     * Retrive Products by Category
+     * 
+     * @param   integer     $category
+     * @param   integer     $limit 
+     * @return  array | bool
+     */
+    public function getProductsByCategory($category, $limit = NULL) {
+        $query = Doctrine_Query::create()->from('Model_Products')
+                ->where('category = ?', $category);
+        if($limit != NULL) {
+            $query->limit($limit);
+        }
+        try {
+            $results = $query->execute();
+        }
+        catch (Doctrine_Exception $e) {
+            return $e->getMessage();
+        }
+        return $results;
+    }
+    
+    /**
+     * Retrieve Product Categories
+     * 
+     * @return   array | bool     Categories
+     */
+    public function getCategories() {
+        $query = Doctrine_Query::create()->from('Model_Categories');
+        try {
+            $results = $query->execute();
+        }
+        catch (Doctrine_Exception $e) {
+            return $e->getMessage();
+        }
+        return $results;
+    }
 }

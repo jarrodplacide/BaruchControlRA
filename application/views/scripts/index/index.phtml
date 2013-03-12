@@ -1,13 +1,8 @@
 <? $this->pageTitle = "Products"; ?>
 <div id="content">
-    <!--<pre><? echo var_dump($this->products->toArray()); ?></pre>-->
-    <div id="products">
-        <? foreach($this->products->toArray() as $product): ?>
-            <div class="product">
-                <a href="/selected/sku/<? echo $product['sku']; ?>">
-                    <img src="<? echo $product['productImageLarge']?>" alt="Product" width="100" height="100"/> 
-                </a>
-            </div>
-        <? endforeach; ?>
-    </div>
+    <h3>Select one of the following categories:</h3>
+    <? foreach($this->categories as $category): ?>
+        <p class="category"><a href="index/category/id/<? echo $category['id']; ?>"><? echo $category['name']; ?></a></p>
+    <? endforeach; ?>
+    <div class="clearfix"></div>
 </div>

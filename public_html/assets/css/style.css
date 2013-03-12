@@ -80,22 +80,47 @@ body {
 
 #content {
     width: 900px;
-    margin: 0 auto;
+    margin: 0 auto 50px;
 }
 
 body header {
-    height: 200px;
+    height: 125px;
     text-align: center;
     margin: 10px 0 30px;
+}
+
+#content {
+    text-align: center;
+}
+
+#content .category {
+    text-decoration: underline;
+    width: 200px;
+}
+
+#content .category:nth-of-type(even) {
+    float: left;
+}
+
+#content .category:nth-of-type(odd) {
+    float: right;
 }
 
 #content #products .product {
     width: 100px;
     height: 100px;
     display: inline-block;
-    margin: 0 10px 10px 0;
+    margin: 0 15px 10px 0;
+    border: 3px solid white;
 }
 
+#content #products .product:hover {
+    border: 3px solid blue;
+}
+
+#content #products .product:active {
+    border: 3px solid red;
+}
 /* =============================================================================
    Media Queries
    ========================================================================== */
